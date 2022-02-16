@@ -192,6 +192,7 @@ app.post("/submit", function (req, resp) {
                 console.log(err);
             else
                 resp.send("record has been saved");
+                alert("ho geya");
         })
       
             var nodemailer = require('nodemailer');

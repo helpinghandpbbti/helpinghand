@@ -1,0 +1,156 @@
+<html lang="en">
+
+<head>
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Ur Profile</title>
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function doshowpic(ref) {
+            //alert();
+            var image = document.getElementById('photo');
+            image.src = URL.createObjectURL(ref.files[0]);
+        }
+    </script>
+</head>
+
+<body style="background-color:rgb(125, 243, 7);width: 700px;" class="container">
+    <div>
+        <form method="post" enctype="multipart/form-data">
+            <div>
+                <form>
+                    <div style="color: rgb(40, 40, 230); margin-top: 20px;" class="col-12 text-center fs-1">
+                        Create Profile
+                    </div>
+
+                    <div class="row">
+                        <div class="row">
+                            <div class="col">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input required name="txtemail" type="email" class="form-control"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div style="color: darkgreen" class="form-text">We'll never share your email with anyone
+                                    else.
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <label for="" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="txtpass" id="">
+                            </div>
+                        </div>
+                        <div> <br><button>FETCH</button>
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            Profile Pic:
+                            <input type="file" style="margin-top: 15px;margin-left: 60px;" class="col-6" name="photoo"
+                                onchange="doshowpic(this);">
+                            <img id="photo" alt="" width="130" height="130">
+
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
+                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label">Full
+                                    Name</label>
+                                <input required name="txtname" type="text" class="form-control" id=""
+                                    aria-describedby="emailHelp">
+
+                            </div>
+                            <div class="col">
+                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label">Contact
+                                    Number
+                                </label>
+                                <input required name="txtnum" type="text" class="form-control" id=""
+                                    aria-describedby="emailHelp">
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div> <br>
+                    <label for="exampleInputEmail1" class="form-label">Full Address</label>
+                    <input required name="txtadd" type="text" class="form-control" id="" aria-describedby="emailHelp">
+
+                </div>
+                <div class="col"> <br>
+                    <label for="exampleInputEmail1" class="form-label">State</label> <br>
+                    <select style="border: 0px;height: 38px;border-radius: 5px; width: 328px;" name="txtstate" id="">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="col"> <br>
+                    <label for="exampleInputPassword1" class="form-label">City</label>
+                    <input required name="txtcity" type="text" class="form-control" id="exampleInputPassword1">
+
+                </div>
+
+
+            </div> <br>
+
+            <center>
+                <button type="submit" formaction="/submit" style="margin-right: 50px;"
+                    class="btn btn-primary">SUBMIT</button>
+                <input type="button" class="btn btn-primary" value="UPDATE">
+
+            </center>
+
+        </form>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>

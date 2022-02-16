@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+    <title>CItizen Records</title>
+    <script src="js/angular.min.js"></script>
+    <script>
+        var mymodule = angular.module("myownmodule03", []);
+        var myController = mymodule.controller("mycontroller03", function ($scope, $http) {
+            $scope.fname = "akash";
+            $scope.lname = "mehma";
+            $scope.full;
+            $scope.dojoin = function () {
+                $scope.full = $scope.fname + "  " + $scope.lname;
+            }
+            $scope.akash = [{
+                name: "mehma",
+                address: "gtb nagar",
+            },
+
+            ];
+            $scope.akashmehma;
+           
+            $scope.akshdeepmehma;
+            $scope.dofetchcity = function () {
+                var url = "/frtchcitiesss";
+                $http.get(url).then(Akmg, Nakmg);
+                function Akmg(jsonresp) {
+
+                    $scope.akshdeepmehma = jsonresp.data;
+
+                }
+                function Nakmg(jsonresp) {
+
+
+                }
+            }
+            $scope.akshdeepmehmacate;
+            $scope.dofetchcate = function () {
+                var url = "/fetchcate";
+                $http.get(url).then(Akmg, Nakmg);
+                function Akmg(jsonresp) {
+
+                    $scope.akshdeepmehmacate = jsonresp.data;
+
+                }
+                function Nakmg(jsonresp) {
+
+
+                }
+            }
+
+            $scope.dochange = function () {
+                var url = "/dsdsospecific?x=" + $scope.city+"&yy"+$scope.category;
+                $http.get(url).then(kuchFxGood, kuchFxBad);
+                function kuchFxGood(jsonresp) {
+                    $scope.kuchbhi = jsonresp.data;
+                }
+                function kuchFxBad(jsonresp) {
+                    alert(JSON.stringify(jsonresp.data));
+                }
+            }
+            $scope.doSare = function () {
+                //  alert();
+
+                var url = "/shopoowall";
+                $http.get(url).then(kuchFxGood, kuchFxBad);
+                function kuchFxGood(jsonresp) {
+                    //  alert(JSON.stringify(jsonresp.data));
+                    $scope.kuchbhi = jsonresp.data;
+                }
+                function kuchFxBad(jsonresp) {
+                    alert(JSON.stringify(jsonresp.data));
+                }
+
+
+            }
+
+
+
+        })
+    </script>
+</head>
+
+<body ng-controller="mycontroller03" ng-app="myownmodule03" ng-init="dofetchcity();">
+    <center>
+        <br><br> <label for="" style="margin-left: 128px;">City:</label>
+        <select ng-model="city">
+            <option ng-repeat="obj in akshdeepmehma" value={{obj.city}}> {{obj.city}} </option>
+        </select>
+        <label for="" style="margin-left: 128px;">Category:</label>
+        <select ng-model="category">
+            <option ng-repeat="obj in akshdeepmehmacate" value={{obj.Category}}> {{obj.Category}} </option>
+
+        </select> <br><br>
+        <input type="button" value="Fetch All Records" ng-click="doSare();">
+        <input type="button" value="Fetch Specific Records" ng-click="dochange();">
+        </p>
+        <table>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" ng-repeat="obj in kuchbhi" style="margin: 10px;">
+                    <div class="card" style="height: auto;width: 320px;padding: 10;">
+                        <center>
+                            <img src="workerupload/{{obj.pic}}" style="width: 100px;height: 100px;" alt="...">
+
+
+                            <div class="card-body">
+                                <h6 class="card-text">Email Id={{obj.email}}</h6>
+                                <h6 class="card-text">City={{obj.city}}</h6>
+                                <h6>Category={{obj.category}}</h6>
+                                <h6>id proof={{obj.idproof}}</h6>
+
+                                <button data-bs-toggle="modal" data-bs-target="#citizenprofile"
+                                    class="btn btn-primary">Know About Work</button>
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="citizenprofile" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{obj.name}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>

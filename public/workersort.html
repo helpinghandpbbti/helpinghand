@@ -49,22 +49,23 @@
                 }
             }
             $scope.akshdeepmehmacate;
-            $scope.dofetchcate = function () {
-                var url = "/fetchcate";
-                $http.get(url).then(Akmg, Nakmg);
-                function Akmg(jsonresp) {
-
-                    $scope.akshdeepmehmacate = jsonresp.data;
-
+            $scope.dofetchcate=function()
+            {
+                var url="/fetchcate";
+                $http.get(url).then(good,bad);
+                function good(response)
+                {
+                    //alert(JSON.stringify(response.data));
+                    $scope.akshdeepmehmacate=response.data;
                 }
-                function Nakmg(jsonresp) {
-
-
+                function bad(response)
+                {
+                    alert(JSON.stringify(response.data));
                 }
             }
 
             $scope.dochange = function () {
-                var url = "/dsdsospecific?x=" + $scope.city+"&yy"+$scope.category;
+                var url = "/dsdsospecific?x="+$scope.city+"&yy="+$scope.category;
                 $http.get(url).then(kuchFxGood, kuchFxBad);
                 function kuchFxGood(jsonresp) {
                     $scope.kuchbhi = jsonresp.data;
@@ -95,7 +96,7 @@
     </script>
 </head>
 
-<body ng-controller="mycontroller03" ng-app="myownmodule03" ng-init="dofetchcity();">
+<body ng-controller="mycontroller03" ng-app="myownmodule03" ng-init="dofetchcity();dofetchcate();">
     <center>
         <br><br> <label for="" style="margin-left: 128px;">City:</label>
         <select ng-model="city">
@@ -103,7 +104,7 @@
         </select>
         <label for="" style="margin-left: 128px;">Category:</label>
         <select ng-model="category">
-            <option ng-repeat="obj in akshdeepmehmacate" value={{obj.Category}}> {{obj.Category}} </option>
+            <option ng-repeat="obj in akshdeepmehmacate" value={{obj.category}}> {{obj.category}} </option>
 
         </select> <br><br>
         <input type="button" value="Fetch All Records" ng-click="doSare();">
@@ -122,10 +123,10 @@
                 <div class="col-md-3" ng-repeat="obj in kuchbhi" style="margin: 10px;">
                     <div class="card" style="height: auto;width: 320px;padding: 10;">
                         <center>
-                            <img src="workerupload/{{obj.pic}}" style="width: 100px;height: 100px;" alt="...">
+              <img src="workerupload/{{obj.pic}}" style="width: 100px;height: 100px;" alt="...">
 
 
-                            <div class="card-body">
+                        <div class="card-body">
                                 <h6 class="card-text">Email Id={{obj.email}}</h6>
                                 <h6 class="card-text">City={{obj.city}}</h6>
                                 <h6>Category={{obj.category}}</h6>

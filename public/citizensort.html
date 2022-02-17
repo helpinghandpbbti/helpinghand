@@ -75,7 +75,19 @@
 
 
             }
+            $scope.mehma;
+            $scope.knowwrk=function(email){
+                var url = "/akash?email="+email;
+                $http.get(url).then(kuchFxGood, kuchFxBad);
+                function kuchFxGood(jsonresp) {
+                    //  alert(JSON.stringify(jsonresp.data));
+                    $scope.mehma = jsonresp.data;
+                }
+                function kuchFxBad(jsonresp) {
+                    alert(JSON.stringify(jsonresp.data));
+                }
 
+            }
 
 
         })
@@ -105,14 +117,11 @@
                 <div class="col-md-3" ng-repeat="obj in kuchbhi" style="margin: 10px;">
                     <div class="card" style="height: 255px;width: 320px;padding: 10;">
                         <center>
-                            <img src="pics/New folder/{{obj.pic}}" style="width: 100px;height: 100px;" alt="...">
-
-
                             <div class="card-body">
-                                <h6 class="card-text">Email Id={{obj.email}}</h6>
+                                <h6 class="card-text">Email Id={{obj.uid}}</h6>
                                 <h6 class="card-text">City={{obj.city}}</h6>
 
-                                <button  data-bs-toggle="modal" data-bs-target="#citizenprofile" class="btn btn-primary">Know About Work</button>
+                                <button  data-bs-toggle="modal" data-bs-target="#citizenprofile" ng-click="knowwrk(obj.uid);" class="btn btn-primary">Know About Work</button>
                             </div>
                         </center>
                     </div>
@@ -126,12 +135,13 @@
   <!-- Modal -->
   <div class="modal fade" id="citizenprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" ng-repeat="obj in mehma">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+       {{obj.email}} <br>
        {{obj.name}}
         </div>
         <div class="modal-footer">

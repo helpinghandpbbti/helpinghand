@@ -8,13 +8,12 @@ var path = require("path");
 app.use(fileUpload());
 var mysql = require("mysql");
 
-app.listen(process.env.PORT||4555);
 
 app.listen(4555, function () {
   
     console.log("server ok started");
 });
-app.get("/", function (req, resp) {
+app.get("/h", function (req, resp) {
     console.log("okay");
     resp.sendFile(__dirname + "/public/1project.html");
 })
@@ -99,6 +98,27 @@ app.post("/submit", function (req, resp) {
 
     })
     
+    app.post("/wrkersetting", function (req, resp) {
+        console.log("Worker page opened");
+        resp.setHeader("content-type", "text/html");
+
+        var dataAry = [req.body.wrkpassnew,req.body.wrkcnrmpass,req.body.wrkmail, req.body.wrkpass];
+        hostconn.query("update workers set password=?,cnfrmmpass=? where email=? and password=?", dataAry, function (err) {
+            if (err)
+                console.log(err);
+            else
+                console.log("password has been changed");
+        })
+        var dataAry = [req.body.wrkcnrmpass,req.body.wrkmail, req.body.wrkpass];
+        hostconn.query("update workers set cnfrmmpass=? where email=? and password=?", dataAry, function (err) {
+            if (err)
+                console.log(err);
+            else
+                console.log("cnfrm has been changed");
+        })
+        resp.sendFile(__dirname + "/public/dash-worker.html");
+    })
+    
 
     app.post("/posttsubmit", function (req, resp) {
         resp.setHeader("content-type", "text/html");
@@ -158,6 +178,18 @@ app.post("/submit", function (req, resp) {
                 resp.send(result);
         })
     })
+    
+    app.get("/workerrcheck", function (req, resp) {
+        console.log("kyoni");
+        console.log(req.query.c);
+        hostconn.query("select * from workers where email=? and password=?", [req.query.e,req.query.f], function (err, result) {
+            if (err)
+                resp.send(err);
+            else
+            console.log("fsaufgas");
+                resp.send(result);
+        })
+    })
 
 
     app.post("/workerprofile", function (req, resp) {
@@ -192,7 +224,6 @@ app.post("/submit", function (req, resp) {
                 console.log(err);
             else
                 resp.send("record has been saved");
-                alert("ho geya");
         })
       
             var nodemailer = require('nodemailer');
@@ -228,7 +259,7 @@ app.post("/submit", function (req, resp) {
 //===========Cities For Citizen Records In Admin Dash===========//
 app.get("/fetchcities",(req,resp)=>{
     console.log("hoogh");
-hostconn.query("select distinct city from 1citizen",(err,result)=>
+hostconn.query("select distinct city from postrequire",(err,result)=>
 {
     if(err)
     resp.send(err);
@@ -239,7 +270,7 @@ hostconn.query("select distinct city from 1citizen",(err,result)=>
 
 app.get("/showall",(req,resp)=>{
     console.log("akashhh");
-hostconn.query("select * from 1citizen",(err,result)=>
+hostconn.query("select * from postrequire",(err,result)=>
 {
     if(err)
     resp.send(err);
@@ -250,7 +281,18 @@ hostconn.query("select * from 1citizen",(err,result)=>
 
 app.get("/dospecific",(req,resp)=>{
     console.log(req.query.x);
-hostconn.query("select * from 1citizen where city=?",[req.query.x],(err,result)=>
+hostconn.query("select * from postrequire where city=?",[req.query.x],(err,result)=>
+{
+    if(err)
+    resp.send(err);
+    else
+    resp.send(result);
+})
+});
+
+app.get("/akash",(req,resp)=>{
+    console.log(req.query.x);
+hostconn.query("select * from 1citizen where email=?",[req.query.email],(err,result)=>
 {
     if(err)
     resp.send(err);

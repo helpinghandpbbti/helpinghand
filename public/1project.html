@@ -47,17 +47,17 @@
             })
         });
         $(document).ready(function () {
-            $("#wrkbtn").click(function () {
+            $("#wrkerbtn").click(function () {
                 // alert($("#").val());
-                var urlwithdata = "/workerrcheck?c=" + $("#txxttemaaail").val() + "&d=" + $("#emaillllpass").val();
+                var urlwithdata = "/workerrcheck?e=" + $("#emaiill").val() + "&f=" + $("#emailtxtpass").val();
 
                 $.get(urlwithdata, function (response) {
                     //  alert(JSON.stringify(response[0].email));
                     //  var akash = document.getElementById("#txxtemaill");
                     // var mehma = document.getElementById("#txttkey");
 
-                    if ($("#txxttemaaail").val() == response[0].email && $("#emaillllpass").val() == response[0].password) {
-                        window.localStorage.setItem("x", $("#txtLoginEmail").val());
+                    if ($("#emaiill").val() == response[0].email && $("#emailtxtpass").val() == response[0].password) {
+                        window.localStorage.setItem("aa", $("#txtLoginEmail").val());
 
                         window.location.href = "dash-worker.html";
 
@@ -308,7 +308,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Signup</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Sign-in</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -335,7 +335,7 @@
                 <div class="modal-body">
                     Welcome Back:- </div>
                 <div class="modal-footer">
-                    <a href="dash-worker.html"> <button type="button" style="margin-right: 50px;"
+                    <a href="" data-bs-target="#modallworker" data-bs-toggle="modal"> <button type="button" style="margin-right: 50px;"
                             class="btn btn-warning" data-bs-dismiss="modal">Worker</button></a>
                     <button type="button" style="margin-right: 140px;" class="btn btn-success" data-bs-toggle="modal"
                         data-bs-target="#modalllcitizen">Citizen</button>
@@ -374,6 +374,40 @@
                     <div class="modal-footer justify-content-center">
 
                         <button type="button" id="citizenbtn" name="citizenbtn" class="btn btn-primary">login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form enctype="multipart/form-data" method="post">
+        <div class="modal fade" id="modallworker" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h5 class="modal-title " style="margin-left: 160px;" id="exampleModalLabel">Welcome Back</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="emaiill" name="emaiill"
+                                    aria-describedby="emailHelp">
+
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" name="emailtxtpass" id="emailtxtpass"
+                                    placeholder="Password">
+                                <label for="">Password</label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+
+                        <button type="button" id="wrkerbtn" name="wrkerbtn" class="btn btn-primary">login</button>
                     </div>
                 </div>
             </div>

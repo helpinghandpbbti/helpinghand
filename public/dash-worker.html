@@ -1,8 +1,16 @@
 <html>
 
 <head>
+    <link rel="icon" href="pics/workericon.jpg">
+
+    <style>
+        #body{
+            background-image: url(pics/back.webp);
+            background-position: 100px;
+        }
+    </style>
     <script src="js/angular.min.js"></script>
-    <title>Document</title>
+    <title>Worker Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -27,55 +35,69 @@
     </script>
 </head>
 
-<body>
-    <div class="container" style="width: 850px;">
+<body id="body">
+    <div class="container" style="width: 1100px;">
         <form>
             <center>
-                <div >
-                    <div class="col bg-warning " style="margin-top: 20px;">
-                        <label style="color: rgb(18, 140, 18);">
-                            <h1>Worker Dashboard</h2>
-                        </label>
-                    </div>
-                </div>
-                <div class="row" style="height: 200px;">
-                    <div class=" col">
-                        <img style=" border-radius: 30px;" src="pics/citizen.png"
-                            class="card-img-top" alt="...">
-                        <div>
-                            <p>
 
-                                <a href="find-work.html" target="_blank">
-                                    <h4 style="margin-top: 70px;">Find Work</h3>
-                                </a>
-                            </p>
+                
+                <div class="row">
+                    <div class="row">
+                        <div class="col" style="background-color: #F5F5F1;height: 60px;margin-top: 30px;">
+                            <label style="color: black;">
+                                <center>
+    
+                                    <h1 style="margin-top: 5px;"> <b>Worker Dashboard</b></h1>
+                                </center>
+                            </label>
                         </div>
                     </div>
-                    <div class=" col" style="width: 100px;height: 200px ;margin-top: 50px; ;">
-                        <img style=" border-radius: 30px;" src="pics/settingsd.jpg"
-                            class="card-img-top" alt="...">
-                        <div>
-                            <p>
-
-                                <a href="settings.html" target="_blank">
-                                    <h4 style="margin-top: 70px;">Settings</h3>
-                                </a>
-                            </p>
+    
+                    <div class="row" style="height: 200px;">
+                        <div class=" col" style="width: 100px;height: 200px ;margin-top: 50px; ;">
+                            <img style=" border-radius: 3px;" src="pics/photo22.jpg "
+                                class="card-img-top" alt="...">
+                            <div>
+                                <p>
+    
+                                    <a href="profileenew.html" target="_blank">
+                                        <h4 style="margin-top: 30px;color: #F5F5F1;">Profile</h3>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class=" col" style="width: 100px; height: 200px ;margin-top: 50px;">
-                        <img src="pics/logout.png" style="height: 240px;" class="card-img-top"
-                            alt="...">
-                        <div class="card-body">
-                            <p class="card-text">
-                                <a href="">
-                                    <h4>Logout</h4>
-                                </a>
-                            </p>
+                        <div class=" col" style="width: 100px;height: 200px ;margin-top: 50px; ;">
+                            <img style=" border-radius: 3px;height: 240px;" src="pics/findworkkk.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <a href="wrkerfcitzn.html">
+                                        <h4 style="margin-top: 15px;">Find Work</h4>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    
+                        <div class=" col" style="width: 100px;height: 200px ;margin-top: 50px;">
+                            <img src="pics/setttinggs.jpg" style="height: 240px;"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <a href="settings-worker.html">
+                                        <h4 style="margin-top: 10px;">Settings</h4>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class=" col" style="width: 100px; height: 230px ;margin-top: 50px;">
+                            <img src="pics/loggoutt.png" style="height: 240px;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <a href="" style="margin-top: 60px;">
+                                        <h4>Logout</h4>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                 </div>
+               
             </center>
         </form>
     </div>

@@ -2,7 +2,14 @@
 
 <head>
     <script src="js/angular.min.js"></script>
-    <title>Document</title>
+    <link rel="icon" href="pics/adminn.png">
+    <style>
+        #body{
+            background-image: url(pics/backgrounds-design-light-desktop-images-hd-best.jpg);
+            background-position: 0px;
+        }
+    </style>
+    <title>Admin Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -27,20 +34,31 @@
     </script>
 </head>
 
-<body>
-    <div class="container" style="width: 850px;">
+<body id="body">
+    <div class="container" style="width: 1000px;">
         <form>
             <center>
                 <div >
-                    <div class="col bg-warning " style="margin-top: 20px;">
-                        <label style="color: rgb(18, 140, 18);">
-                            <h1>Admin Dashboard</h2>
-                        </label>
+                    <div class="col " style="background-color: #292F33 ;margin-top: 28px;">
+                        <label style="color: #55ACEE;padding: 6px;">
+                            <b><h1> Admin Dashboard</h2></b></label>
                     </div>
                 </div>
                 <div class="row" style="height: 200px;">
-                    <div class=" col">
-                        <img style=" border-radius: 30px;" src="pics/citizen.png"
+                    <div class=" col" style="width: 100px;height: 200px ;margin-top: 50px; ;">
+                        <img  src="pics/profile -photo-771742.jpeg "
+                            class="card-img-top" alt="...">
+                        <div>
+                            <p>
+
+                                <a href="profileenew.html" target="_blank">
+                                    <h4 style="margin-top: 30px;color: #F5F5F1;">Profile</h3>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" col" style="margin-top: 64px;">
+                        <img style=" border-radius: 3px;;height: 308px;" src="pics/noface.jpg"
                             class="card-img-top" alt="...">
                         <div>
                             <p>
@@ -51,19 +69,19 @@
                             </p>
                         </div>
                     </div>
-                    <div class=" col" >
-                        <img style=" border-radius: 30px;" src="pics/worker.jpg"
+                    <div class=" col" style="margin-top: 64px;" >
+                        <img style=" border-radius: 3px;height: 308px;" src="pics/illustration.jpg"
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">
                                 <a href="workersort.html" >
-                                    <h4 style="margin-top: 48px;">Worker Records</h4>
+                                    <h4 style="margin-top: 54px;">Worker Records</h4>
                                 </a>
                             </p>
                         </div>
                     </div>
-                    <div class=" col" >
-                        <img src="pics/settingsd.jpg" style="margin-top: 20px;" class="card-img-top" alt="...">
+                    <div class=" col" style="margin-top: 50px;" >
+                        <img src="pics/settingadminn.png" style="margin-top: 0px;;height: 336px;" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-text">
                                 <a href="">

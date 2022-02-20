@@ -7,16 +7,13 @@ var path = require("path");
 
 app.use(fileUpload());
 var mysql = require("mysql");
-app.get("/",function(req,resp){
-    resp.send("dsudgsja");
-    
-})
+
 app.listen(process.env.PORT || 4555);
 app.listen(4555, function () {
   
     console.log("server ok started");
 });
-app.get("/h", function (req, resp) {
+app.get("/", function (req, resp) {
     console.log("okay");
     resp.sendFile(__dirname + "/public/1project.html");
 })

@@ -1,7 +1,12 @@
 <html lang="en">
 
 <head>
-
+<style>
+    #body{
+background-image: url(pics/backkkkk.jpg);
+background-position: 18px 18px ;
+    }
+</style>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,58 +29,57 @@
     </script>
 </head>
 
-<body style="background-color:rgb(125, 243, 7);width: 700px;" class="container">
+<body style="background-color:rgb(125, 243, 7);width: 900px;" id="body" class="container">
     <div>
         <form method="post" enctype="multipart/form-data">
             <div>
                 <form>
-                    <div style="color: rgb(40, 40, 230); margin-top: 20px;" class="col-12 text-center fs-1">
-                        Create Profile
+                    <div style="color:black;background-color: #F5F5F1; margin-top: 20px;" class="col-12 text-center fs-1">
+                        <b>Create Profile</b>
+                    </div>
+                    <div style="margin-top: 18px;">
+                       <b> Profile Pic</b>:
+                        <input type="file" style="margin-top: 15px;margin-left: 110px;" class="col-6" name="photoo"
+                            onchange="doshowpic(this);"></input>
+                        <img style="margin-left: 107px;" id="photo" alt="" width="130" height="130">
+
+
                     </div>
 
                     <div class="row">
-                        <div class="row">
-                            <div class="col">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input required name="txtemail" type="email" class="form-control"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div style="color: darkgreen" class="form-text">We'll never share your email with anyone
-                                    else.
-                                </div>
 
+                        <div class="col">
+                            <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
+                            <input required name="txtemail" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div style="color: darkgreen" class="form-text">We'll never share your email with anyone
+                                else.
                             </div>
-                            <div class="col">
-                                <label for="" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="txtpass" id="">
-                            </div>
+
                         </div>
-                        <div> <br><button>FETCH</button>
-
+                        <div class="col">
+                            <label for="" class="form-label"><b>Password</b></label>
+                            <input type="password" class="form-control" name="txtpass" id="">
                         </div>
                     </div>
 
+
+
                     <div>
-                        <div>
-                            Profile Pic:
-                            <input type="file" style="margin-top: 15px;margin-left: 60px;" class="col-6" name="photoo"
-                                onchange="doshowpic(this);">
-                            <img id="photo" alt="" width="130" height="130">
 
-
-                        </div>
 
 
                         <div class="row">
                             <div class="col">
-                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label">Full
-                                    Name</label>
+                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label"><b>Full
+                                    Name</b></label>
                                 <input required name="txtname" type="text" class="form-control" id=""
                                     aria-describedby="emailHelp">
 
                             </div>
                             <div class="col">
-                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label">Contact
-                                    Number
+                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label"><b>Contact
+                                    Number</b>
                                 </label>
                                 <input required name="txtnum" type="text" class="form-control" id=""
                                     aria-describedby="emailHelp">
@@ -85,14 +89,10 @@
                     </div>
             </div>
             <div class="row">
-                <div> <br>
-                    <label for="exampleInputEmail1" class="form-label">Full Address</label>
-                    <input required name="txtadd" type="text" class="form-control" id="" aria-describedby="emailHelp">
-
-                </div>
+                
                 <div class="col"> <br>
-                    <label for="exampleInputEmail1" class="form-label">State</label> <br>
-                    <select style="border: 0px;height: 38px;border-radius: 5px; width: 328px;" name="txtstate" id="">
+                    <label for="exampleInputEmail1" class="form-label"><b>State</b></label> <br>
+                    <select style="border: 0px;height: 38px;border-radius: 5px; width: 425px;" name="txtstate" id="">
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -131,19 +131,42 @@
                         <option value="West Bengal">West Bengal</option>
                     </select>
                 </div>
-                <div class="col"> <br>
-                    <label for="exampleInputPassword1" class="form-label">City</label>
-                    <input required name="txtcity" type="text" class="form-control" id="exampleInputPassword1">
+                <div style="margin-left: 0px;margin-top: 24px;" class="col">
+                    <label for=""  class="form-label"><b>City</b></label><br>
+                    <select style="border: 0px;height: 38px;border-radius: 5px;width: 424px;" name="txtcity"
+                        id="txtcity">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bathinda">Bathinda</option>
+                        <option value="Ludiana">Ludiana</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Gurugram">Gurugram</option>
+                        <option value="Shimla">Shimla</option>
+                        <option value="Srinagar">Srinager</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Ganganagar">Ganganagar</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Banglore">Banglore</option>
+
+                        <option value="others">Others..</option>
+                    </select>
 
                 </div>
 
+                <div> <br>
+                    <label for="exampleInputEmail1" class="form-label"><b>Full Address</b></label>
+                    <input required name="txtadd" type="text" class="form-control" id="" aria-describedby="emailHelp">
 
+                </div>
             </div> <br>
 
             <center>
-                <button type="submit" formaction="/submit" style="margin-right: 50px;"
-                    class="btn btn-primary">SUBMIT</button>
-                <input type="button" class="btn btn-primary" value="UPDATE">
+                <button type="submit" formaction="/submit" style="margin-right: 50px;padding: 9px;"
+                    class="btn btn-primary"><b>SUBMIT</b></button>
+                    <button type="submit" formaction="/UPDATEas" style="margin-left: 50px;padding: 9px;"
+                    class="btn btn-primary"><b>UPDATE</b></button>
 
             </center>
 

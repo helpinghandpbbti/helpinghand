@@ -1,6 +1,11 @@
 <html >
 
 <head>
+    <style>
+        #body{
+            background-image: url(pics/nicee.jpg);
+        }
+    </style>
 
 
 
@@ -24,21 +29,21 @@
     </script>
 </head>
 
-<body style="background-color:rgb(19, 243, 243);width: 700px;" class="container">
+<body id="body" style="background-color:rgb(19, 243, 243);width: 900px;" class="container">
     <div>
         <form method="post" enctype="multipart/form-data">
             <div>
                 <form>
-                    <div style="color: rgb(247, 156, 59); margin-top: 20px;font-weight: 900;" class="col-12 text-center fs-1">
-                        Create Profile
+                    <div style="color:black;background-color: #f5f5f5; margin-top: 20px;" class="col-12 text-center fs-1">
+                        <b>Create Profile</b>
                     </div>
 
                     <div >
-                        <div>
-                            Profile Pic:
-                            <input type="file" style="margin-top: 15px;margin-left: 60px;" class="col-6" name="photoo"
+                        <div style="margin-top: 30px;">
+                           <b> Profile Pic</b>:
+                            <input type="file" style="margin-top: 15px;margin-left: 160px;" class="col-6" name="photoo"
                                 onchange="doshowpic(this);">
-                            <img id="photo" alt="" width="130" height="130">
+                            <img id="photo" alt="" width="130" style="margin-left: 55px;" height="130">
 
 
                         </div>
@@ -47,18 +52,17 @@
 
 
                             <div class="col">
-                                <label for="" class="form-label">Email address</label>
+                                <label for="" class="form-label"><b>Email address</b></label>
                                 <input required name="txtadminid" type="email" class="form-control"
                                     id="" aria-describedby="emailHelp">
-                                <div style="color: rgb(27, 150, 27)" class="form-text">We'll never share your email with anyone
-                                    else.
+                                <div style="color: black" class="form-text">YOUR EMAIL IS SECURE.
                                 </div>
 
 
                             </div>
                             <div>
-                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label">Full
-                                    Name</label>
+                                <label style="margin-top: 10px;" for="exampleInputEmail1" class="form-label"><b>Full
+                                    Name</b></label>
                                 <input required name="adminname" type="text" class="form-control" id=""
                                     aria-describedby="emailHelp">
 
@@ -69,12 +73,12 @@
                     </div>
                     <div class="row"> 
                         <div class="col"><br>
-                            <label for="" class="form-label">Date Of Birth</label>
+                            <label for="" class="form-label"><b>Date Of Birth</b></label>
                             <input type="date" class="form-control" name="txtadmindob" id="">
                         </div>
 
                         <div class="col"><br>
-                            <label for="" class="form-label">Password</label>
+                            <label for="" class="form-label"><b>Password</b></label>
                             <input type="password" class="form-control" name="txtadminpass" id="">
                         </div>
                         
@@ -84,11 +88,11 @@
                         <div class="row">
                           
                             <div class="col"><br>
-                                <label for="" class="form-label">Positon In Company</label>
+                                <label for="" class="form-label"><b>Positon In Company</b></label>
                                 <input type="text" class="form-control" name="txtadminpos" id="">
                             </div>
                             <div class="col"><br>
-                                <label for="" class="form-label">Ur Key</label>
+                                <label for="" class="form-label"><b>Ur Key</b></label>
                                 <input type="password" class="form-control" name="txtpasskey" id="">
                             </div>
                         </div>
@@ -96,9 +100,9 @@
             </div>
 
             <br>
-            <button type="submit" formaction="/adminsubmit" style="margin-right: 50px;"
-                class="btn btn-secondary">SUBMIT</button>
-
+           <center> <button type="submit" formaction="/adminsubmit" style="color: black;background-color: #f5f5f5;padding: 9px;"
+            class="btn "><b>SUBMIT</b></button>
+</center>
 
         </form>
     </div>

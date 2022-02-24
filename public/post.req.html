@@ -1,6 +1,11 @@
 <html lang="en">
 
 <head>
+    <style>
+        #body {
+            background-image: url(pics/sunset-deer\ background2.jpg);
+        }
+    </style>
     <script src="jquery-1.8.2.min.js"></script>
     <script>
         var flag = false;
@@ -33,17 +38,16 @@
     <title>Fill Your Needs</title>
 </head>
 
-<body style="background-color: rgb(255, 154, 31);">
-    <div class="container" style="width: 620px;">
-        <form style="border-radius: 5px;background-color: yellowgreen;padding: 13px;margin-top: 12px" method="post"
-            enctype="multipart/form-data">
-            <center>
-                <div style="border-radius: 13px;color: rgb(36, 216, 183); font-weight: 500;padding: 10px;width: 570px;background-color: rgb(8, 8, 193);"
+<body id="body" style="background-color: rgb(255, 154, 31);">
+    <div class="container" style="width: 850px;">
+        <form style="border-radius: 5px;padding: 13px;margin-top: 12px" method="post" enctype="multipart/form-data">
+            <center> <br>
+                <div style="border-radius: 3px;color: black;width: 840px;background-color:#f5f5f5f5"
                     class="col-12 text-center fs-1">
-                    REQUIRED PROVISION </div>
+                    <b>REQUIRED PROVISION</b> </div>
 
             </center>
-            <div>
+            <div class="container">
                 <form>
                     <div style="color: rgb(40, 40, 230); margin-top: 20px;" class="col-12 text-center fs-1">
                     </div>
@@ -51,7 +55,7 @@
                     <div>
                         <div class="row">
                             <div class="col">
-                                <label for="exampleInputEmail1" class="form-label">User Id</label>
+                                <label style="color: #f5f5f5f5;" for="" class="form-label"><b><b>User Id</b></b></label>
                                 <input style="width: 400px;" required name="txtid" type="email" class="form-control"
                                     id="txtid" aria-describedby="emailHelp">
                             </div>
@@ -62,7 +66,7 @@
 
                         </div>
                         <div> <br>
-                            <label for="workk">Type Of Work :-</label> <br>
+                            <label style="color: #f5f5f5f5;" for="workk"><b>Type Of Work :-</b></label> <br>
                             <input style="margin-top: 10px;border: 0px;border-radius: 4px;width: 250px;height: 38px;"
                                 list="worklist" name="book" id="workk">
                             <datalist id="worklist" name="txtcategory">
@@ -96,21 +100,21 @@
                         </div>
 
                         <div> <br>
-                            <label for="exampleInputEmail1" class="form-label">What Job Needs To Be Done :</label>
-                            <input style="width: 573px;" required name="txtwhat" type="text" class="form-control" id=""
+                            <label style="color: #f5f5f5f5;" for="exampleInputEmail1" class="form-label"><b>What Job Needs To Be Done :</b></label>
+                            <input style="width: 400px;" required name="txtwhat" type="text" class="form-control" id=""
                                 aria-describedby="emailHelp">
                             <br>
 
                         </div>
                         <div>
-                            <label>Date Needed/Needed Till Date ?</label><br>
+                            <label style="color: #f5f5f5f5;"><b>Date Needed/Needed Till Date ?</b></label><br>
                             <input type="date"
                                 style="margin-top: 10px;border: 0px;border-radius: 4px;width: 250px;height: 38px;"
                                 name="txtdatee" id="">
                         </div>
                         <div class="col"> <br>
-                            <label for="txtcityy" class="form-label">Location(City)</label> <br>
-                            <input style="width: 250px;" required name="txtcityy" type="text" class="form-control"
+                            <label style="color: #f5f5f5f5;" for="txtcityy" class="form-label"><b>Location(City)</b></label> <br>
+                            <input style="width: 400px;" required name="txtcityy" type="text" class="form-control"
                                 id="txtcityy">
                         </div>
 
@@ -118,7 +122,7 @@
 
 
                     <center>
-                        <button type="submit" formaction="/posttsubmit" class="btn btn-primary">SUBMIT</button>
+                        <button style="background-color: #f5f5f5f5;color: black;" type="submit" formaction="/posttsubmit" class="btn "><b>SUBMIT</b></button>
                     </center>
 
 

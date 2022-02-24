@@ -11,7 +11,7 @@ var mysql = require("mysql");
 app.listen(process.env.PORT || 4555);
 app.get("/", function (req, resp) {
     console.log("okay");
-    resp.sendFile(__dirname + "/public/1project.html");
+    resp.sendFile(__dirname + "/public/testing2.html");
 })
 
 var akm = {
